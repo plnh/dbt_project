@@ -13,7 +13,7 @@ sources:
         description: Each record show physiscal asset order
       - name: Stock Inventory
         description: Each record show stock order
-  - name : live_price
+  - name : Live_price
     database: theta-turbine-457814-c5
     schema: live_price
     tables:

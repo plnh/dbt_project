@@ -2,7 +2,7 @@ with
 source as 
 (
     select *
-    from {{ source('my_data', 'gold_price') }}
+    from {{ source('Live_price', 'gold_price') }}
 
 ),
 
