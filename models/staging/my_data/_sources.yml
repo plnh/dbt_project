@@ -13,3 +13,9 @@ sources:
         description: Each record show physiscal asset order
       - name: Stock Inventory
         description: Each record show stock order
+  - name : live_price
+    database: theta-turbine-457814-c5
+    schema: live_price
+    tables:
+      - name: gold_price
+        description: each record show gold price at time stamp
