@@ -10,7 +10,7 @@ renamed as
 (
 
     select 
-        timestamp as timestamp,
+        timestamp,
         ask as price,
         spreadProfile as price_profile,
         'GLD' as asset_type

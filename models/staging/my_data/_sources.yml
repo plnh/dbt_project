@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: my_data
+  - name: MyDoc
     database: theta-turbine-457814-c5
-    schema: my_data
+    schema: MyDoc
     freshness:
       warn_after:
         count: 24
@@ -15,7 +15,7 @@ sources:
         description: Each record show stock order
   - name : Live_price
     database: theta-turbine-457814-c5
-    schema: live_price
+    schema: Live_price
     tables:
       - name: gold_price
         description: each record show gold price at time stamp
