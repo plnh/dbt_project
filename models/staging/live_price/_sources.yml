@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: MyDoc
+    database: theta-turbine-457814-c5
+    schema: MyDoc
+    freshness:
+      warn_after:
+        count: 24
+        period: hour
+    tables:
+      - name: Physical Asset
+        description: Each record show physiscal asset order
+      - name: Stock Inventory
+        description: Each record show stock order
+  - name : Live_price
+    database: theta-turbine-457814-c5
+    schema: Live_price
+    tables:
+      - name: gold_price
+        description: each record show gold price at time stamp
