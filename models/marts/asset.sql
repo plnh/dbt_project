@@ -1,4 +1,4 @@
-{%- set inv_models = dbt_utils.get_relations_by_pattern(schema_pattern='stg', table_pattern='%_inv') %}
+{%- set inv_models = dbt_utils.get_relations_by_pattern(schema_pattern='dbt_hpham', table_pattern='%_inv') %}
 
 {%- if inv_models | count == 0 %}
     select null as dummy
