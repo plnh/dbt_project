@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_metal_inv
+    description: Transforms raw physical asset data by selecting and renaming fields from the source.
+    columns:
+      - name: asset_name
+        description: Name of the physical asset.
+        tests:
+          - not_null
+
+      - name: type
+        description: Type or category of the asset.
+
+      - name: unit_owned
+        description: Number of units owned.
+        tests:
+          - not_null
+          - is_numeric
+      - name: purchase_date
+        description: Date when the asset was purchased.
+
+      - name: purchase_price
+        description: Price paid at the time of purchase.
+
+      - name: net_value
+        description: Current net value of the asset.
+
+      - name: fee
+        description: Any associated fee with the asset.
+
+      - name: total_cost
+        description: Total cost including fees.
+
