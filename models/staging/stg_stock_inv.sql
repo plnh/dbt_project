@@ -22,7 +22,7 @@ renamed as (
         ] -%}
 
         select
-            "stock" as "asset_type",
+            "financial_assets" as asset_type,
             {%- for i in range(10) %}
                 string_field_{{ i }} as {{ column_name[i] }}
                 {%- if not loop.last -%}, {%- endif -%}
