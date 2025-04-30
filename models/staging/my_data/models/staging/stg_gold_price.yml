@@ -10,9 +10,9 @@ models:
         description: Spread profile used for the price.
         tests:
           - accepted_values:
-            values: ['premium', 'prime', 'standard']
+              values: ['premium', 'prime', 'standard']
       - name: asset_type
         description: Asset type, hardcoded as 'GLD'.
         tests:
           - accepted_values:
-            values: ['GLD']
+              values: ['GLD']
