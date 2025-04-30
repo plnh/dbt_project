@@ -6,6 +6,9 @@ models:
       Transforms stock inventory data from the MyDoc source by selecting and renaming
       string fields into meaningful asset-related columns.
     columns:
+      - name: asset_type
+        description: hardcoded as 'financial asset'
+
       - name: asset_name
         description: Name of the stock or asset.
         tests:

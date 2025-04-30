@@ -8,7 +8,8 @@ with
     renamed as (
         {%- set column_name = [
             "asset_name",
-            "type",
+            "unit_type",
+            "weight_gram",
             "unit_owned",
             "purchase_date",
             "purchase_price",
@@ -18,7 +19,9 @@ with
         ] -%}
 
         select
-            {%- for i in range(8) %}
+            "physical_asset" as asset_type,
+            REGEXP_EXTRACT(string_field_1, r'^(\S+)') as type, 
+            {%- for i in range(9) %}
                 string_field_{{ i }} as {{ column_name[i] }}
                 {%- if not loop.last -%}, {%- endif -%}
             {%- endfor %}

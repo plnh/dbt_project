@@ -4,14 +4,20 @@ models:
   - name: stg_metal_inv
     description: Transforms raw physical asset data by selecting and renaming fields from the source.
     columns:
+      - name: asset_type
+        description: hardcoded as 'physical asset'
+      
       - name: asset_name
         description: Name of the physical asset.
         tests:
           - not_null
 
-      - name: type
-        description: Type or category of the asset.
+      - name: unit_type
+        description: form of the asset such as coin, bullions, use to calculate unit price along with weights.
 
+      - name: weights
+        description: weight per unit, used to calculate unit price
+        
       - name: unit_owned
         description: Number of units owned.
         tests:
