@@ -1,0 +1,21 @@
+version : 2
+
+
+models:
+  - name: stg_gold_price
+    description: Transforms gold_price data by casting timestamp to date and renaming fields.
+    columns:
+      - name: date
+        description: Date extracted from timestamp.
+      - name: price
+        description: The ask price of gold.
+      - name: price_profile
+        description: Spread profile used for the price.
+        tests:
+          - accepted_values:
+              values: ['premium', 'prime', 'standard']
+      - name: asset_type
+        description: Asset type, hardcoded as 'gold'.
+        tests:
+          - accepted_values:
+              values: ["gold"]

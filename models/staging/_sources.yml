@@ -10,12 +10,14 @@ sources:
         period: hour
     tables:
       - name: Physical Asset
-        description: Each record show physiscal asset order
+        description: Each record show physiscal asset 
       - name: Stock Inventory
-        description: Each record show stock order
+        description: Each record show stock purchase
   - name : Live_price
     database: theta-turbine-457814-c5
     schema: Live_price
     tables:
       - name: gold_price
         description: each record show gold price at time stamp
+
+
