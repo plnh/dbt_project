@@ -14,7 +14,7 @@ models:
 
       - name: asset_name
         description: The description.
-      - name: unit_type
+      - name: type_ticker
         description: Describes the measurement unit, extracted as the second word from the original unit_type name using SPLIT
             only expect 'bullion', 'coin', if there's more form consider update purity column
         warns
