@@ -7,7 +7,7 @@ models:
       - name: asset_type
         description: The category of the asset (e.g., gold, silver).
       - name: type
-        description: physical form of the acess
+        description: physical form of the acess, for now expect only value 'gold'
         warns:
             - accepted_values:
                 values: ['gold']
@@ -15,7 +15,8 @@ models:
       - name: asset_name
         description: The description.
       - name: unit_type
-        description: Describes the measurement unit (coin, buillion), extracted as the second word from the original unit_type name using SPLIT
+        description: Describes the measurement unit, extracted as the second word from the original unit_type name using SPLIT
+            only expect 'bullion', 'coin', if there's more form consider update purity column
         warns
             -accepted_values: 
                 values: ['bullion', 'coin']
