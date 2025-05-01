@@ -28,5 +28,6 @@ with
         from source
     )
 
-select *
+select 
+    *
 from renamed

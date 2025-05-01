@@ -7,6 +7,11 @@ models:
       - name: asset_type
         description: hardcoded as 'physical asset'
       
+      - name: type
+        description: type of the physical asset such as gold, silver.
+        tests:
+          - not_null
+
       - name: asset_name
         description: Name of the physical asset.
         tests:
@@ -17,7 +22,7 @@ models:
 
       - name: weights
         description: weight per unit, used to calculate unit price
-        
+
       - name: unit_owned
         description: Number of units owned.
         tests:
