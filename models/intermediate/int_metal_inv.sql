@@ -10,9 +10,9 @@ with
     transformed as (
         select
             asset_type,
-            lower(type) as type,
+            (trim(type)) as type,
             asset_name,
-            lower(SPLIT(unit_type, ' ')[OFFSET(1)]) as unit_type,
+            lower(trim(SPLIT(unit_type, ' ')[OFFSET(1)])) as type_ticker,
             {{- cast_to_date("purchase_date") -}} as purchase_date,
             {{- cast_to_number("unit_owned", "INT64") -}} as unit_owned,
             case when lower(unit_type) like '%coin%' then 0.9 else 1 end as purity,

@@ -20,7 +20,7 @@ with
 
         select
             "physical_asset" as asset_type,
-            REGEXP_EXTRACT(string_field_1, r'^(\S+)') as type, 
+            SPLIT(string_field_1, ' ')[OFFSET(0)] as type, 
             {%- for i in range(9) %}
                 string_field_{{ i }} as {{ column_name[i] }}
                 {%- if not loop.last -%}, {%- endif -%}
