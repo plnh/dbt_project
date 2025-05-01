@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: int_metal_inv
+    description: transforms and computes metal inventory, casting types, applying purity adjustments,  calculating total weight.
+    columns:
+      - name: asset_type
+        description: The category of the asset (e.g., gold, silver).
+      - name: type
+        description: physical form of the acess
+        warns:
+            - accepted_values:
+                values: ['gold']
+
+      - name: asset_name
+        description: The description.
+      - name: unit_type
+        description: Describes the measurement unit (coin, buillion), extracted as the second word from the original unit_type name using SPLIT
+        warns
+            -accepted_values: 
+                values: ['bullion', 'coin']
+      - name: purchase_date
+        description: Date the asset was purchased (parsed safely via macro).
+      - name: unit_owned
+        description: Number of units owned, cast to INT64.
+      - name: purity
+        description: Adjusted purity factor based on asset type (0.9 for Coins, 1 for bullion).
+      - name: weight_gram
+        description: Weight of one unit in grams.
+      - name: purchase_price
+        description: Purchase price per unit.
+      - name: net_value
+        description: Net value after any adjustments or deductions.
+      - name: fee
+        description: Any associated transaction fee.
+      - name: total_cost
+        description: Total cost incurred (including price and fee).
+      - name: total_weight_gram
+        description: Total weight in grams, adjusted by purity and unit count.
+        tests:
+          - not_null

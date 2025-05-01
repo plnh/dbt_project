@@ -1,3 +1,6 @@
+version : 2
+
+
 models:
   - name: stg_gold_price
     description: Transforms gold_price data by casting timestamp to date and renaming fields.
@@ -15,4 +18,4 @@ models:
         description: Asset type, hardcoded as 'GLD'.
         tests:
           - accepted_values:
-              values: ['GLD']
+              values: ['gold']

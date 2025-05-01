@@ -13,7 +13,7 @@ renamed as
         cast( timestamp as date) as date,
         ask as price,
         spreadProfile as price_profile,
-        'GLD' as asset_type
+        'gold' as asset_type
     from source
 
 )

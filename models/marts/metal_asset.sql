@@ -10,5 +10,4 @@ metal_inv as (
 select * 
     , {{pure_weight_query}} as pure_weight
     --, {{pure_weight_query}} * unit_owned as total_weight
-
 from metal_inv
