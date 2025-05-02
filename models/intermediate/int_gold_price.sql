@@ -15,7 +15,7 @@ filter_transform as (
 averaged as
 (
     select 
-        update_date,
+        current_date as update_date,
         price_profile,
         asset_type,
         price,
