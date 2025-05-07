@@ -5,7 +5,7 @@ models:
   - name: stg_gold_price
     description: Transforms gold_price data by casting timestamp to date and renaming fields.
     columns:
-      - name: date
+      - name: update_date
         description: Date extracted from timestamp.
       - name: price
         description: The ask price of gold.
