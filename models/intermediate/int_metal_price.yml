@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_metal_price
+    description: normalize "gold" prices for the 'prime' price profile by month, using the stg_gold_price staging table.
+    columns:
+      - name: update_date
+        description: "Month-truncated update date of the gold price data."
+      - name: average_price
+        description: "Monthly average price of gold for 'prime' price profile."
+        
