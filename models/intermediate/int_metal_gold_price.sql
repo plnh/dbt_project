@@ -1,18 +1,24 @@
 with 
 filter_transform as 
 (
-    select 
-    update_date,
-        {{cast_to_number("price")}} as price,
-        price_profile,
-        asset_type
+    select  
+        update_date
+        ,{{- cast_to_number("price") }} as price
+        ,price_profile
+        ,asset_type
     from {{ref("stg_gold_price")}}
     where price_profile like "prime"
-),
-averaged as
+)
+, normalize as
 (
-    {{- avg_by_month("filter_transform", "update_date", "price") -}}
+    SELECT
+        DATE_TRUNC(update_date, MONTH) AS update_date,
+        AVG(price) AS average_price
+    FROM filter_transform
+    GROUP BY 1
+    ORDER BY 1
 )
 
-select * from averaged
+select * 
+from normalize
 
