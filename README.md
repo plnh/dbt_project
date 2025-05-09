@@ -1,15 +1,19 @@
-Welcome to your new dbt project!
 
-### Using the starter project
+# Networth Tracker Demo (Airflow + BigQuery + dbt)
 
-Try running the following commands:
-- dbt run
-- dbt test
+This demo project automates the end-to-end workflow for retrieving, transforming, and analyzing personal financial data using **Apache Airflow**, **BigQuery**, **Google Sheets**, and **dbt**.
+
+## Overview
+
+The pipeline includes the following steps:
+
+1. Ingest metal prices and stock data from external APIs.
+2. Load data into Google BigQuery*.
+3. Fetch personal asset allocations from Google Sheets.
+4. Transform** data using dbt:
+   - Normalize prices(e.g stock, physical asset).
+   - Calculate real-time value of the portfolio.
+
+All steps are orchestrated using Apache Airflow.
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
