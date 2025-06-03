@@ -13,7 +13,7 @@ renamed as
         cast( timestamp as date) as update_date,
         ask as price,
         case when spreadProfile like 'manual_entry' then 'prime' else spreadProfile end as price_profile,
-        'gold' as asset_type
+        'Gold' as type
     from source
 
 )

@@ -6,6 +6,8 @@ models:
     columns:
       - name: update_date
         description: "Month-truncated update date of the gold price data."
+      - name: type
+        description: "Type of the metal"
       - name: average_price
         description: "Monthly average price of gold for 'prime' price profile."
       - name: avg_price_per_gram

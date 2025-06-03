@@ -14,8 +14,8 @@ models:
         tests:
           - accepted_values:
               values: ['premium', 'prime', 'standard']
-      - name: asset_type
-        description: Asset type, hardcoded as 'gold'.
+      - name: type
+        description: Asset type, hardcoded as 'Gold'.
         tests:
           - accepted_values:
-              values: ["gold"]
+              values: ["Gold"]
