@@ -10,7 +10,7 @@ models:
       - name: price
         description: The ask price of gold.
       - name: price_profile
-        description: Spread profile used for the price.
+        description: Spread profile used for the price. Converted 'manual_entries' to 'prime'
         tests:
           - accepted_values:
               values: ['premium', 'prime', 'standard']

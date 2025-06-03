@@ -12,7 +12,7 @@ renamed as
     select 
         cast( timestamp as date) as update_date,
         ask as price,
-        spreadProfile as price_profile,
+        case when spreadProfile like 'manual_entry' then 'prime' else spreadProfile end as price_profile,
         'gold' as asset_type
     from source
 
