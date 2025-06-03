@@ -1,6 +1,7 @@
 # Forex Data Loader - Cloud Function
 
 A Google Cloud Function that automatically fetches gold price data (XAU/EUR) from the Swissquote API and loads it into BigQuery for tracking.
+I wrote this with the help of Claude.ai
 
 ## Overview
 
