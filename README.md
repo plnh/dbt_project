@@ -4,7 +4,7 @@
 ## Overview
 ![Frame 1](https://github.com/user-attachments/assets/536acab5-86a9-42fe-b745-f93a95783dda)
 
-A simple, low-cost data pipeline that tracks my gold holdings in real-time. Built with just Python & SQL.
+A simple data pipeline that tracks my gold holdings in real-time. Built with just Python & SQL.
 
 **Datasource:**
 * datasources
