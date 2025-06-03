@@ -2,18 +2,51 @@
 # dbt Project
 
 ## Overview
-![Frame 1](https://github.com/user-attachments/assets/536acab5-86a9-42fe-b745-f93a95783dda)
-
 A simple data pipeline that tracks my gold holdings in real-time. Built with just Python & SQL.
 
-**Datasource:**
+![Frame 1](https://github.com/user-attachments/assets/536acab5-86a9-42fe-b745-f93a95783dda)
+
+# Building a Real-Time Data Pipeline to Track My Gold Holdings
+As someone who holds physical gold as part of my investment portfolio, I found myself constantly checking spot prices and manually calculating the current value of my holdings. So I decided to build a real-time data pipeline that would track my gold's value automatically and provide useful insights.
+**The Challenge**
+Gold prices fluctuate constantly during market hours, and keeping track of my holdings' value manually is both time-consuming and prone to errors. I needed a solution that would:
+* Fetch real-time gold prices from reliable sources
+* Calculate the current value of my specific holdings (accounting for different purities and weights)
+* Store historical data for trend analysis
+* Provide a dashboard for easy monitoring
+
+Other requirement:
+* No cost or low cost
+* Keep manual task as minimal
+  
+**Architecture Overview**
+  
 * datasources
   * Gold Price data: [Forex](https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/EUR) , a free API swissquote database, covering daily gold price.
   * Other data: [GoogleSheet], store some sensitive data , such as portfolio, costs, etc.
-* extract & load: BigQuery, Cloud Function
-* Transformation: DBT.
+* extract: python script to run in Cloud Function per schedule to fetch gold price
+* load: all is stored in BigQuery
+* Transformation: DBT
 * BI: Tableau (tobe finished).
 
-## Features
+## Step 1: Choosing Data Sources
+I choose [Forex API](https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/EUR) , a free API swissquote database, covering daily gold price.
+
+I track my holdings using GoogleSheet, the benefits is is easliy to load to BigQuery
+
+Step 2: Modeling my holdings
+Gold comes in different forms and purity such as bullion, coin etc. Hence it's essiential to properly modeling my holdings. 
+I created a Google Sheet with the following structure:
+![image](https://github.com/user-attachments/assets/be5b645b-a627-4879-875e-b202d397f089)
+
+Purity is not included as I want to keep manual data entry as minimal. The purity will be calculated based of type/despcrition in transform step
+
+Step 3: Extra & Load to BigQuery
+
+See [Cloud Function] for API Integration 
+See [How to Connect Sheets to BigQuery ](https://support.google.com/docs/answer/9702507?hl=en)
+
+Step 5: Transform in dbt
+
 ![image](https://github.com/user-attachments/assets/0d809761-a93a-4421-b1d2-39085fb8f1b1)
 
