@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: asset_metal_cost
+    description: "Cumulative metal investment analysis with gain/loss calculations"
+       
+    columns:
+      - name: date_month
+        description: "Monthly date dimension"
+        data_type: date
+        
+      - name: year_month
+        description: "Year-month identifier"
+        data_type: string
+        
+      - name: cumulative_cost
+        description: "Running total of investment cost"
+        data_type: decimal
+        tests:
+          - not_null
+          
+      - name: cumulative_weight
+        description: "Running total of metal weight in grams"
+        data_type: decimal
+        tests:
+          - not_null
+          
+      - name: cumulative_value
+        description: "Current market value of cumulative holdings"
+        data_type: decimal
+        
+      - name: gain_loss
+        description: "Profit/loss calculation (current value - cost basis)"
+        data_type: decimal
+
+    tests:
+      - unique:
+          column_name: date_month
+      - dbt_utils.expression_is_true:
+          expression: "cumulative_cost >= 0"
+      - dbt_utils.expression_is_true:
+          expression: "cumulative_weight >= 0"
