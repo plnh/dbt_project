@@ -13,11 +13,6 @@ A simple data pipeline that tracks my gold holdings in real-time. Built with jus
 * extract & load: BigQuery, Cloud Function
 * Transformation: DBT.
 * BI: Tableau (tobe finished).
-**Performance Issues:**
-- Check query execution plans
-- Review model materializations
-- Consider incremental strategies
-- Optimize join patterns
 
 ## Features
 ![image](https://github.com/user-attachments/assets/0d809761-a93a-4421-b1d2-39085fb8f1b1)
