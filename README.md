@@ -50,19 +50,6 @@ Step 5: Transform in dbt
 
 ![image](https://github.com/user-attachments/assets/0d809761-a93a-4421-b1d2-39085fb8f1b1)
 
-*Topics that I covered:
-  *Connected my github. BigQuery API to dbt
-  *Created delopment enviromnent 
-  *Used Source to simplify the code and reference them in my models
-  *Created multiple Macros to avoid repetition and reuse code more easily
-  *Used Common table expressions (CTE)
-  *Included Custom Generic Tests 
-*Topics to be continued:
-  *Setting up hooks (pre-hook, post-hook) and an Audit table to log all action running in deployments
-  *Creating Snapshots to track changes in variables over time
-  *Creating a dev and production environment to be able to separate my code if I work in a team
-  *Using tags on my models in order to use them when I schedule JOBS in dbt cloud
-  *Limited my data to reduce the time of tests and runs
 
 Next Step: 
 
