@@ -48,5 +48,6 @@ See [How to Connect Sheets to BigQuery ](https://support.google.com/docs/answer/
 
 Step 5: Transform in dbt
 
+
 ![image](https://github.com/user-attachments/assets/0d809761-a93a-4421-b1d2-39085fb8f1b1)
 
