@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: "Monthly date dimension table containing one row per month from June 2024 onwards"
+    columns:
+      - name: date_month
+        description: "First day of each month (YYYY-MM-01 format)"
+        tests:
+          - unique
+          - not_null
+        meta:
+          dimension_type: "date"
+    
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "date_month >= '2024-06-01'"
+          config:
+            severity: error
+      
+      - dbt_utils.expression_is_true:
+          expression: "extract(day from date_month) = 1"
+          config:
+            severity: error
+            error_if: ">0"
