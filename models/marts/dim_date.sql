@@ -1,12 +1,9 @@
-With 
-dates_raw as (
-    /* generating dates using the macro from the dbt-utils package */
+WITH dates_raw as (
     {{ dbt_utils.date_spine(
         datepart="month",
         start_date="cast('2024-06-01' as date)",
-        end_date="current_date()"
-        )
-    }}
+        end_date="date_add(current_date(), interval 1 month)"
+    ) }}
 )
 
 
