@@ -80,6 +80,7 @@ I created a Google Sheet with the following structure:
 * Marts Layer focuses on:
 
   *Final models for Tableau dashboards
+![image](https://github.com/user-attachments/assets/99b2e0a6-237b-4681-ae01-d69b01d73ba6)
 
 ## Next Steps
 * Visualize the trend on Tableau (not yet done)
