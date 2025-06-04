@@ -83,7 +83,7 @@ I created a Google Sheet with the following structure:
 * Marts Layer focuses on:
 
   *Final models for Tableau dashboards
-![image](https://github.com/user-attachments/assets/99b2e0a6-237b-4681-ae01-d69b01d73ba6)
+![image](https://github.com/user-attachments/assets/411cbfb5-795e-4683-8cd8-2ee15be16250)
 
 ## Benefits
 * Informed how much the asset worth in real time (aka how many year still I can retire)
