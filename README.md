@@ -60,7 +60,9 @@ I created a Google Sheet with the following structure:
 ### Step 4: Transform in dbt
 
 * configuge models:
-![dbt Transformation](https://github.com/user-attachments/assets/0d809761-a93a-4421-b1d2-39085fb8f1b1)
+
+![image](https://github.com/user-attachments/assets/f0891404-fef9-4b5d-aa4b-2eceeed29177)
+
 * Staging Layer:
 
   * Raw gold price data from the Forex API
