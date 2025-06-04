@@ -59,10 +59,22 @@ I created a Google Sheet with the following structure:
 
 ### Step 4: Transform in dbt
 
-*configuge models:
+* configuge models:
 ![dbt Transformation](https://github.com/user-attachments/assets/0d809761-a93a-4421-b1d2-39085fb8f1b1)
-
+* Staging Layer:
+ * Raw gold price data from the Forex API
+ * Portfolio holdings from Google Sheets
+ * Basic cleaning and standardization
+ 
+* Intermediate Layer probably includes:
+ * Purity calculations based on gold type/description
+ * Current value calculations (weight × purity × price)
+ * Data rules (ex. weight > 0)
+  
+* Marts Layer focuses on:
+  *Final models for Tableau dashboards
 
 ## Next Steps
-* Visualize the trend on Tableau
+* Visualize the trend on Tableau (not yet done)
+
 
