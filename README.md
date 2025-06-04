@@ -2,7 +2,7 @@
 
 ## Overview
 
-A simple data pipeline that tracks my gold holdings in real-time. Built with just Python & SQL.
+A simple data pipeline that tracks my gold holdings in real-time. Built with just Python,SQL and dbt.
 
 As someone who holds physical gold as part of my investment portfolio, I found myself constantly checking spot prices and manually calculating the current value of my holdings. So I decided to build a real-time data pipeline that would track my gold's value automatically and provide useful insights.
 
