@@ -54,7 +54,7 @@ I created a Google Sheet with the following structure:
 
 ### Step 3: Extract & Load to BigQuery
 
-* See [Cloud Function] for API Integration
+* See [Cloud Function](https://github.com/plnh/dbt_project/tree/main/cloud_function) for API Integration
 * See [How to Connect Sheets to BigQuery](https://support.google.com/docs/answer/9702507?hl=en)
 
 ### Step 4: Transform in dbt
