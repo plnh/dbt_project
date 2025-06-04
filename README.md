@@ -84,5 +84,6 @@ I created a Google Sheet with the following structure:
 
 ## Next Steps
 * Visualize the trend on Tableau (not yet done)
+* Confirgue Dim_date & gold_live (stag&Int) as incremental
 
 
