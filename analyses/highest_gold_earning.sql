@@ -1,15 +1,11 @@
-with
-    gold as (
-        select
-            (cumulative_value - cumulative_cost) / cumulative_cost as margin, date_month
-        from {{ ref("asset_metal_cost") }}
-    ),
-    m_margin as (select max(margin) as max_margin from gold),
-    final as (
-        select date_month
-        from gold
-        inner join m_margin on gold.margin = m_margin.max_margin
-    )
+{% set margin_cal = "(cumulative_value - cumulative_cost) / cumulative_cost" %}
 
-select *
-from final
+select date_month , round(margin*100,2) as margin_percentage
+from (
+    select 
+        date_month,
+        {{ margin_cal }} as margin,
+        max( {{ margin_cal }} ) over () as max_margin
+    from {{ ref("asset_metal_cost") }}
+) ranked
+where margin = max_margin
