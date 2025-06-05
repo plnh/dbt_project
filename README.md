@@ -62,7 +62,6 @@ I created a Google Sheet with the following structure:
 * configuge models:
 
 ![image](https://github.com/user-attachments/assets/f0891404-fef9-4b5d-aa4b-2eceeed29177)
-[Doc](https://dy972.us1.dbt.com/accounts/70471823456493/develop/70471823864618/docs/index.html))
 
 * Staging Layer:
 
