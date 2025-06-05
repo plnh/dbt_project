@@ -88,11 +88,8 @@ I created a Google Sheet with the following structure:
 * Informed how much the asset worth in real time (aka how many year still I can retire)
 * Store historical data of  for trend analysis 
 * Free
-
-### Other Requirements
-
-* No cost or low cost
 * Keep manual task as minimal
+
 ## Next Steps
 * Visualize the trend on Tableau (not yet done)
 * Confirgue Dim_date & gold_live (stag&Int) as incremental
