@@ -85,7 +85,7 @@ I created a Google Sheet with the following structure:
 ![image](https://github.com/user-attachments/assets/411cbfb5-795e-4683-8cd8-2ee15be16250)
 
 ## Benefits
-* Informed how much the asset worth in real time (aka how many year still I can retire)
+* Informed how much the asset worth in real time (aka when I can buy a yatch)
 * Store historical data of  for trend analysis 
 * Free
 * Keep manual task as minimal
