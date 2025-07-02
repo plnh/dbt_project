@@ -15,7 +15,7 @@ Gold prices fluctuate constantly during market hours, and keeping track of my ho
 * Store historical data for trend analysis
 * Provide a dashboard for easy monitoring
 
-### Other Requirements
+### Other Requirements 
 
 * No cost or low cost
 * Keep manual task as minimal
