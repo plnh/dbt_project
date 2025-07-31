@@ -51,3 +51,10 @@ models:
       - name: fee_lc
         description: "Transaction fee in local currency"
         data_type: numeric
+
+      - name: total_cost_lc
+        description: "Transaction cost in local currency"
+        data_type: numeric
+      - name: total_cost
+        description: "Transaction cost"
+        data_type: numeric
