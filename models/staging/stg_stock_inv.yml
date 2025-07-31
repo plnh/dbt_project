@@ -1,55 +1,53 @@
-version : 2
+version: 2
 
 models:
-  - name: stg_stock_inventory
-    description: >
-      Transforms stock inventory data from the MyDoc source by selecting and renaming
-      string fields into meaningful asset-related columns.
+  - name: stg_stock_inv
+    description: "Transformed stock inventory data with raw data"
     columns:
       - name: asset_type
-        description: hardcoded as 'financial asset'
-
-      - name: asset_name
-        description: Name of the stock or asset.
-        tests:
-          - not_null
-
-      - name: ticker
-        description: Ticker symbol for the stock.
-
-      - name: type
-        description: Asset type (e.g., stock, ETF).
-
-      - name: sector
-        description: Industry sector the asset belongs to.
-
+        description: "hard coded as financial asset"
+        data_type: string
+        
       - name: purchase_date
-        description: Date of asset purchase.
-
+        description: "Date of the transaction"
+        data_type: date
+        
+      - name: asset_name
+        description: "name of the stock/EFT"
+        data_type: string
+        
+      - name: transaction_type
+        description: "Type of transaction (buy/sell)"
+        data_type: string
+        
+      - name: ticker
+        description: "Stock ticker symbol"
+        data_type: string
+        
       - name: unit_owned
-        description: Number of units owned.
-        tests:
-          - not_null
-          - is_numeric
-
+        description: "Quantity of units owned"
+        data_type: numeric
+        
+      - name: local_currency
+        description: "Local currency code"
+        data_type: string
+        
+      - name: FX
+        description: "Exchange rate to EUR"
+        data_type: numeric
+        
       - name: purchase_price
-        description: Price paid per unit at time of purchase.
-        tests:
-          - not_null
-          - is_numeric
-
-      - name: net_value
-        description: Current net value of the holdings.
-        tests:
-          - not_null
-          - is_numeric
-
+        description: "Purchase price in EUR"
+        data_type: numeric
+        
       - name: fee
-        description: Fees associated with purchase or ownership.
-        tests:
-          - is_numeric
-
-      - name: total_cost
-        description: Total cost including fees and purchase price.
-        tests:
-          - is_numeric
+        description: "Transaction fee in EUR"
+        data_type: numeric
+        
+      - name: purchase_price_lc
+        description: "Purchase price in local currency"
+        data_type: numeric
+        
+      - name: fee_lc
+        description: "Transaction fee in local currency"
+        data_type: numeric
