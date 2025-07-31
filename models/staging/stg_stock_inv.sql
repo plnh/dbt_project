@@ -9,7 +9,7 @@ source as
 renamed as (
         select
             "financial_assets" as asset_type,
-            'Date' as purchase_date	,
+            Date as purchase_date	,
             Description	as asset_name ,
             Transaction_Type as transaction_type,
             Symbol	as ticker,
