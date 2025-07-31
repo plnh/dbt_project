@@ -31,6 +31,6 @@ select
 from renamed)
 
 select * ,
-purchase_price_lc + fee_lc as total_cost_lc,
-purchase_price + fee as total_cost
+purchase_price_lc*unit_owned + fee_lc as total_cost_lc,
+purchase_price*unit_owned + fee as total_cost
 from transformed
