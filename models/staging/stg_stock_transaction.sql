@@ -22,15 +22,23 @@ renamed as (
     ),
 transformed as (
 select
-    *,
-    CASE WHEN local_currency LIKE 'EUR' THEN purchase_price_lc
+    asset_type,
+    purchase_date	,
+    asset_name ,
+    transaction_type,
+    ticker,
+    local_currency,
+    FX,
+    unit_owned,
+    case when transaction_type like 'Sell' then (-1) * purchase_price_lc else purchase_price_lc end as purchase_price_lc, 
+    fee, 
+
+from renamed)
+
+select
+*,     CASE WHEN local_currency LIKE 'EUR' THEN purchase_price_lc
         ELSE purchase_price_lc END AS purchase_price,
     CASE WHEN local_currency not LIKE 'EUR' THEN fee/FX
         ELSE fee END AS fee_lc
 
-from renamed)
-
-select * ,
-purchase_price_lc*unit_owned + fee_lc as total_cost_lc,
-purchase_price*unit_owned + fee as total_cost
 from transformed
