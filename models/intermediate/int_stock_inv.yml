@@ -27,4 +27,6 @@ models:
         description: "Running total of units owned as of this month"
         tests:
           - not_null
+      - name: local_currency
+        description: "Currency the price would be on"
 
