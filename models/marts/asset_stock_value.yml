@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: asset_stock_value
+    description: "Monthly stock portfolio valuation combining holdings with market prices"
+    columns:
+      - name: date_month
+        description: "Month-end date for portfolio valuation"
+        tests:
+          - not_null
+      - name: year_month
+        description: "Year-month identifier (YYYY-MM format)"
+        tests:
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+
+      - name: local_currency
+        description: "Currency code for local market pricing"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD']
+              quote: false
+      - name: cumulative_units
+        description: "Total number of units held as of month-end"
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+              name: non_negative_units
+      - name: average_price
+        description: "Monthly average price per unit"
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+              name: positive_price
+      - name: total_value
+        description: "Total portfolio value (cumulative_units * average_price)"
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+              name: non_negative_value
+    tests:
+      - unique:
+          column_name: "date_month || '-' || ticker"
+          name: unique_month_ticker_combination
+
+
+ 
