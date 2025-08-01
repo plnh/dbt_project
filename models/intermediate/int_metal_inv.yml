@@ -12,7 +12,7 @@ models:
         description: Physical form of the asset, for now expect only value 'gold'
         data_tests:
           - accepted_values:
-              values: ["gold"]
+              values: ["gold", "Gold"]
               config:
                 severity: warn
       - name: asset_name

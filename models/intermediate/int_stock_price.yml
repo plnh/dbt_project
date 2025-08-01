@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: mart_monthly_stock_price
+    description: "Monthly aggregated stock prices with average price per ticker per month"
+    columns:
+      - name: update_date
+        description: "Month-end date (truncated to first day of month)"
+        tests:
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: average_price
+        description: "Monthly average price for the ticker, rounded to 2 decimal places"
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+              name: positive_average_price
+    tests:
+      - unique:
+          column_name: "update_date || '-' || ticker"
+          name: unique_month_ticker_combination

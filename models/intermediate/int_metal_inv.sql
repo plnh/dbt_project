@@ -3,7 +3,7 @@
     "purchase_price",
     "net_value",
     "fee",
-    "total_cost",
+    "total_cost"
 ] %}
 
 with

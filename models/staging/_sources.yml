@@ -26,5 +26,7 @@ sources:
     tables:
       - name: gold_price
         description: each record show gold price at time stamp
+      - name: stock_price
+        description: each record show stock price at time stamp
 
 
