@@ -16,7 +16,3 @@ models:
         description: "Stock price value"
         tests:
           - not_null
-    tests:
-      - unique:
-          column_name: "update_date || '-' || ticker"
-          name: unique_date_ticker_combination

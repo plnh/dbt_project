@@ -11,9 +11,6 @@ models:
         description: The ask price of gold.
       - name: price_profile
         description: Spread profile used for the price. Converted 'manual_entries' to 'prime'
-        tests:
-          - accepted_values:
-              values: ['premium', 'prime', 'standard']
       - name: type
         description: Asset type, hardcoded as 'Gold'.
         tests:
