@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: int_stock_inv
+    description: "Fact table showing cumulative stock holdings by asset type, ticker, and month"
+    columns:
+      - name: year_month
+        description: "Month-end date for the holdings snapshot"
+        tests:
+          - not_null
+      - name: date_month
+        description: "Month-end date for the holdings snapshot"
+        tests:
+          - not_null
+      - name: asset_type
+        description: "Type of asset = financial asset"
+        tests:
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+
+      - name: unit_owned
+        description: "Units purchased in this specific month (can be null if no transactions)"
+      - name: cumulative_units
+        description: "Running total of units owned as of this month"
+        tests:
+          - not_null
+
