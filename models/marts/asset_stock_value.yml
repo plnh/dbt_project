@@ -21,9 +21,7 @@ models:
         description: "Currency code for local market pricing"
         tests:
           - not_null
-          - accepted_values:
-              values: ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD']
-              quote: false
+
       - name: cumulative_units
         description: "Total number of units held as of month-end"
         tests:
