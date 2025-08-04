@@ -23,6 +23,7 @@ with
         select
             f.date_month,
             f.year_month,
+            f.asset_type,
             f.ticker,
             f.local_currency,
             f.cumulative_units,
@@ -33,7 +34,7 @@ with
     )
 
 select * 
-    , round(cumulative_units*average_price,2) as total_value
+    , round(cumulative_units*average_price,2) as cumulative_value
 from final
 where cumulative_units > 0
 order by ticker, date_month
