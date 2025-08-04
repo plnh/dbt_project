@@ -12,7 +12,13 @@ models:
       - name: year_month
         description: "Year-month identifier"
         data_type: string
-        
+
+      - name : asset_type
+        description: "hard-coded as metal asset"
+        data_type: string
+      - name : asset_desc
+        description: "hard-coded as gold"
+        data_type: string  
       - name: cumulative_cost
         description: "Running total of investment cost"
         data_type: decimal
