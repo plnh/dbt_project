@@ -19,7 +19,7 @@ with
         ] -%}
 
         select
-            "physical_asset" as asset_type,
+            "metal_assets" as asset_type,
             SPLIT(string_field_1, ' ')[OFFSET(0)] as type, 
             {%- for i in range(9) %}
                 string_field_{{ i }} as {{ column_name[i] }}

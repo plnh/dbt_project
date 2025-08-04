@@ -5,7 +5,7 @@ models:
     description: Transforms raw physical asset data by selecting and renaming fields from the source.
     columns:
       - name: asset_type
-        description: hardcoded as 'physical asset'
+        description: hardcoded as 'metal_asset'
       
       - name: type
         description: type of the physical asset such as gold, silver.

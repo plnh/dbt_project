@@ -33,7 +33,7 @@ with
         
     )
 
-select * 
+select * , "stock" as asset_desc
     , round(cumulative_units*average_price,2) as cumulative_value
 from final
 where cumulative_units > 0

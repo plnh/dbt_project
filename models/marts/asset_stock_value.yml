@@ -20,6 +20,9 @@ models:
         description: "financial assets"
         tests:
           - not_null
+      - name : asset_desc
+        description: "stock"
+        
       - name: local_currency
         description: "Currency code for local market pricing"
         tests:
@@ -39,6 +42,7 @@ models:
           - dbt_utils.expression_is_true:
               expression: "> 0"
               name: positive_price
+      
       - name: cumulative_value
         description: "Total portfolio value (cumulative_units * average_price)"
         tests:
