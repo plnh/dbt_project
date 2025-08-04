@@ -5,7 +5,7 @@ with
             year_month,
             asset_type,
             asset_desc,
-            "EUR" as,
+            "EUR" as local_currency,
             sum(cumulative_value) as cumulative_value
         from {{ ref("asset_metal_cost") }}
         group by 1,2,3,4
