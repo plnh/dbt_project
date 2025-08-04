@@ -32,7 +32,8 @@ with
         
     )
 
-
 select * 
     , round(cumulative_units*average_price,2) as total_value
 from final
+where cumulative_units > 0
+order by ticker, date_month
