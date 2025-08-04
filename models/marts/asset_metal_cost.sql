@@ -26,7 +26,7 @@ with
     price as (select * from {{ ref("int_metal_price") }})
 
 select
-    f.*,
+    f.*, "physical_asset" as asset_type,
     round((f.cumulative_weight * p.avg_price_per_gram), 2) as cumulative_value,
     round(
         (f.cumulative_weight * p.avg_price_per_gram) - cumulative_cost, 2

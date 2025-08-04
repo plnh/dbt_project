@@ -11,6 +11,7 @@ transaction as (
     group by 1,2,3,4
     )
 
+
 ,dim_date as (
     select date_month, year_month from {{ ref("dim_date") }}
     )
