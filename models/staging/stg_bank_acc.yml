@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_bank_acc
+    description: "money in bank account"
+    columns:
+      - name: update_date
+        description: "The date when the bank account data was last updated"
+        data_type: date
+        tests:
+          - not_null
+      
+      - name: asset_name
+        description: "Name of the asset or account"
+        data_type: string
+        tests:
+          - not_null
+      
+      - name: type
+        description: "Type of account (bank)"
+        data_type: string
+        tests:
+          - not_null
+      
+      - name: value
+        description: "Amount or value of the asset"
+        data_type: numeric
+        tests:
+          - not_null
