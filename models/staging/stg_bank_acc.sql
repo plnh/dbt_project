@@ -11,7 +11,7 @@ renamed as
 
     select 
         cast( Date as date) as update_date,
-        Asset_Name as asset_name,
+        Asset_Name as asset_type,
         bank as type,
         Amount as value
     from source
