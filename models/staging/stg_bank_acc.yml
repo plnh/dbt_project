@@ -10,7 +10,7 @@ models:
         tests:
           - not_null
       
-      - name: asset_name
+      - name: asset_type
         description: "Name of the asset or account"
         data_type: string
         tests:
